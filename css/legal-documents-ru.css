@@ -1,0 +1,14 @@
+/* Общие стили */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;  /* Черный фон */
+    color: #FFFFFF;  /* Белый текст */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Занять всю высоту экрана */
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+

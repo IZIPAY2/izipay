@@ -1,0 +1,141 @@
+/* confirmation-message (для успешного выбора карты) */
+.confirmation-message {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* error-message (для ошибки, если карта не выбрана) */
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #000; /* Черный фон */
+    color: #ffffff; /* Белый текст для контраста */
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Весь экран */
+}
+
+.logo-container {
+    position: absolute; /* Логотип будет слева сверху */
+    top: 30px;
+    left: 34px;
+    z-index: 10; /* Добавьте z-index, чтобы он был выше других элементов */
+}
+
+.logo {
+    height: auto;
+    width: 171px; /* Устанавливаем ширину */
+    transform: translateX(10px); /* Сдвигаем влево */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Центрируем контейнер по вертикали */
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 45px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.card-selection {
+    display: flex;
+    justify-content: center; /* Центрируем карты */
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.card-option {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    margin: 5px; /* Добавляем отступы между картами */
+}
+
+.card-option input {
+    display: none;
+}
+
+.card-image {
+    width: 250px; /* Увеличиваем карты */
+    height: 250px; /* Увеличиваем высоту карт */
+    border-radius: 10px;
+    transition: 0.3s;
+    border: 3px solid transparent;
+}
+
+.card-option input:checked + .card-image {
+    border: 3px solid #07B218;
+    transform: scale(1.1);
+}
+
+.submit-btn {
+    background: #07B218; /* Зеленый цвет */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.submit-btn:hover {
+    background: #218838; /* Темно-зеленый при наведении */
+}
+/* Медиазапросы для мобильных устройств */
+@media screen and (max-width: 768px) {
+    /* Логотип */
+    .logo-container {
+        top: 20px;
+        left: 20px;
+    }
+
+    .logo {
+        width: 150px; /* Уменьшаем логотип на мобильных устройствах */
+    }
+
+    /* Заголовок */
+    h1 {
+        font-size: 30px; /* Уменьшаем размер заголовка */
+        margin-bottom: 15px;
+    }
+
+    /* Контейнер карт */
+    .card-selection {
+        grid-template-columns: repeat(3, 1fr); /* 3 карты в ряд на мобильных устройствах */
+    }
+
+    .card-option {
+        margin: 5px 0; /* Увеличиваем отступы между картами */
+    }
+
+    .card-image {
+        width: 120px; /* Уменьшаем карты на мобильных устройствах */
+        height: 120px;
+    }
+
+    /* Кнопка отправки */
+    .submit-btn {
+        padding: 12px 25px;
+        font-size: 16px;
+        margin-top: 15px;
+    }
+}

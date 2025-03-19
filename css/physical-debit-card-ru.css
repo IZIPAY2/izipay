@@ -1,0 +1,168 @@
+/* Общие стили */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;  /* Черный фон */
+    color: #FFFFFF;  /* Белый текст */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Занять всю высоту экрана */
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+/* Главный контейнер - центрирование по всей странице */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    box-sizing: border-box;
+    flex: 1;
+    margin-top: 70px;
+    height: auto;
+    margin-bottom: 80px;
+}
+
+/* Заголовок - центрируется */
+.title {
+    font-size: 45px;
+    color: #07B218;
+    text-align: center;
+    margin-top: 70px;
+}
+
+/* Контейнер для изображения и текста */
+.content {
+    position: relative; /* Добавляем относительное позиционирование */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    width: 100%; /* Задаем ширину в процентах для уменьшения растягивания */
+    max-width: 1500px; /* Ограничиваем максимальную ширину */
+    margin: 0 auto; /* Центрируем элемент по горизонтали */
+    text-align: center;
+    box-sizing: border-box;
+    margin-top: -50px;
+}
+
+/* Контейнер изображения */
+.image-container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; /* Сдвиг изображения левее */
+}
+
+.card-image {
+    width: 445px;
+    height: auto;
+}
+
+/* Контейнер для текста */
+.text-container {
+    flex: 1.5;
+    text-align: left;
+    max-width: 700px; /* Даем больше пространства тексту */
+}
+
+/* Центрирование списка */
+.features {
+    list-style-type: none;
+}
+
+.features li {
+    font-size: 24px;
+    color: #FFFFFF;
+}
+
+.features li strong {
+    color: #FFFFFF;
+}
+
+/* Кнопка "Get Started" по центру */
+.btn {
+    background-color: #07B218;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    margin: 30px auto 0; /* Центрирование */
+    width: 200px;
+    text-align: center;
+    border-radius: 5px;
+    position: absolute; /* Фиксируем позицию */
+    left: 50%; /* Сдвигаем в центр */
+    transform: translateX(-50%); /* Корректируем позицию */
+}
+
+.btn:hover {
+    background-color: #FFFFFF;
+    color: #07B218;
+}
+/* Адаптация для мобильных устройств */
+@media screen and (max-width: 768px) {
+    /* Главный контейнер */
+    .container {
+        height: auto; /* Убираем фиксированную высоту */
+    }
+
+    /* Заголовок */
+    .title {
+        font-size: 30px; /* Уменьшаем размер заголовка */
+        margin-top: 30px;
+    }
+
+    /* Контейнер для изображения и текста */
+    .content {
+        flex-direction: column; /* Переводим на вертикальную ориентацию */
+    }
+
+    /* Контейнер изображения */
+    .image-container {
+        justify-content: center; /* Центрируем изображение */
+        margin-right: 0; /* Убираем правый отступ */
+        margin-top: 50px;
+        margin-bottom: -25px;
+    }
+
+    .card-image {
+        width: 80%; /* Увеличиваем ширину изображения */
+        max-width: 350px; /* Ограничиваем максимальную ширину */
+    }
+
+    /* Контейнер для текста */
+    .text-container {
+        padding: 15px;
+        max-width: 100%; /* Растягиваем текст на всю ширину */
+    }
+
+    /* Список */
+    .features li {
+        font-size: 18px; /* Уменьшаем размер шрифта списка */
+    }
+
+    /* Кнопка */
+    .btn {
+        background-color: #07B218;
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        font-size: 16px;
+        cursor: pointer;
+        display: block;
+        margin: 30px auto 0; /* Центрирование */
+        width: 150px;
+        text-align: center;
+        border-radius: 5px;
+        position: relative; /* Убираем абсолютное позиционирование */
+        left: auto;
+        transform: none;
+    }
+}

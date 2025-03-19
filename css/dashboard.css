@@ -1,0 +1,255 @@
+/* Общие стили */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000; /* Черный фон */
+    color: #ffffff; /* Белый текст */
+}
+
+/* Контейнер страницы */
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Навигация */
+.navbar {
+    background-color: #000000; /* Темный фон для навигации */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-logo img {
+    width: 171px;
+    transform: translateX(20px) translateY(11px); /* Сдвиг влево */
+}
+
+.navbar-menu {
+    list-style-type: none;
+    display: flex;
+}
+
+.navbar-menu li {
+    margin-left: 20px;
+}
+
+.navbar-menu a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+.navbar-menu a:hover {
+    color:#07B218
+}
+
+/* Контент */
+.dashboard-content {
+    padding: 40px;
+    flex: 1;
+    background-color: #000000; /* Черный фон для контента */
+}
+
+/* Информация о пользователе */
+.balance {
+    background-color: #000000; /* Темный фон для блока баланса */
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.balance h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.balance-amount {
+    font-size: 32px;
+    font-weight: bold;
+    color: #07B218;
+}
+
+/* Карта */
+.card-image {
+    width: 30%;
+    max-width: 350px; /* Максимальная ширина */
+    display: block;
+    margin: 0 auto 15px; /* Выравнивание по центру */
+    border-radius: 10px;
+}
+
+.card {
+    background-color: #000000; /* Темный фон для карты */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+}
+
+.card h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.card-info {
+    text-align: center;
+}
+
+.card-info p {
+    font-size: 18px;
+    color: #b0b0b0;
+}
+
+.card-actions {
+    margin-top: 20px;
+}
+
+.card-actions .button {
+    background-color: #07B218;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.card-actions .button:hover {
+    background-color: #05a115;
+}
+
+/* Быстрые действия */
+.actions {
+    margin-bottom: 40px;
+}
+
+.actions h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.action-btn {
+    background-color: #1f1f1f; /* Темный фон для кнопок */
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.action-btn:hover {
+    background-color: #333333; /* Более светлый фон при наведении */
+}
+
+/* История транзакций */
+.transactions {
+    background-color: #000000; /* Темный фон для блока транзакций */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.transactions h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.transactions ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.transactions li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #1f1f1f;
+}
+
+.transactions span {
+    font-size: 16px;
+}
+
+.transactions span:first-child {
+    font-weight: bold;
+}
+
+/* Медиазапросы для мобильных устройств */
+@media screen and (max-width: 768px) {
+    /* Навигация */
+    .navbar {
+        display: flex;
+        justify-content: space-between; /* Размещаем логотип слева, а остальные элементы справа */
+        align-items: center; /* Центрируем элементы по вертикали */
+        width: 90%;
+    }
+
+    /* Логотип */
+    .logo {
+        position: absolute; /* Делаем позиционирование абсолютным */
+        left: 0; /* Устанавливаем отступ от левого края */
+        top: 10px; /* Устанавливаем отступ от верхнего края */
+        width: 120px; /* Уменьшаем размер логотипа */
+    }
+
+    /* Навигационные элементы */
+    .navbar-links {
+        display: flex;
+        gap: 20px;
+        margin-right: 20px; /* Добавляем отступ справа */
+    }
+
+    /* Контейнер страницы */
+    .dashboard-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Центрируем по вертикали */
+        align-items: center; /* Центрируем по горизонтали */
+        min-height: 90vh; /* Устанавливаем минимальную высоту на 100% экрана */
+        padding: 10px;
+    }
+
+    /* Контент */
+    .dashboard-content {
+        padding: 20px;
+    }
+
+    /* Информация о пользователе */
+    .balance {
+        padding: 15px;
+    }
+
+    /* Карта */
+    .card-image {
+        width: 60%; /* Убедитесь, что карта занимает всю доступную ширину */
+        height: auto; /* Сохраняем пропорции изображения */
+    }
+    .card {
+        padding: 10px; /* Уменьшаем внутренние отступы для карты */
+        margin: 0; /* Убираем внешние отступы */
+    }
+
+    /* Быстрые действия */
+    .action-btn {
+        width: 48%; /* Кнопки на мобильных устройствах занимают 48% ширины экрана */
+    }
+
+    /* История транзакций */
+    .transactions li {
+        flex-direction: column; /* Для мобильных устройств список будет отображаться в колонку */
+        align-items: flex-start;
+    }
+
+    .transactions span {
+        font-size: 14px; /* Уменьшаем размер шрифта для транзакций */
+    }
+}
