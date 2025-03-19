@@ -1,0 +1,121 @@
+/* Общие стили */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;  /* Черный фон */
+    color: #FFFFFF;  /* Белый текст */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Занять всю высоту экрана */
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+/* Контейнер FAQ */
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    flex: 1;
+    padding: 20px; /* Добавляем немного внутреннего отступа для визуального комфорта */
+    width: 100%; /* Задаем ширину в процентах для уменьшения растягивания */
+    max-width: 900px; /* Ограничиваем максимальную ширину */
+    margin: 0 auto; /* Центрируем элемент по горизонтали */
+    text-align: left;
+    box-sizing: border-box;
+    margin-top: 50px;
+}
+
+/* Заголовок FAQ */
+.title {
+    font-size: 2.5rem;
+    color: #07B218; /* Зеленый цвет для заголовка */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Название каждой секции */
+.section-title {
+    font-size: 1.8rem;
+    color: #07B218; /* Зеленый цвет для заголовков секций */
+    margin-bottom: 20px;
+}
+
+/* Стиль для каждого вопроса */
+.faq-question {
+    background-color: #000000; /* Темный фон для вопросов */
+    border: none;
+    padding: 15px;
+    text-align: left;
+    font-size: 1.2rem;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+    color: #fff; /* Белый цвет для текста вопроса */
+}
+
+/* Стиль для активного состояния вопроса */
+.faq-question:hover, .faq-question:focus, .faq-question:active {
+    background-color: #07B218; /* Зеленый фон при наведении и активном состоянии */
+    color: #000000; /* Черный текст при наведении и активном состоянии */
+}
+
+/* Ответы на вопросы */
+.faq-answer {
+    display: none;
+    padding: 15px;
+    background-color: #000000; /* Темный фон для ответов */
+    border-left: 3px solid #07B218; /* Зеленая линия слева */
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #fff; /* Белый текст */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Анимация для скрытия/показа */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+/* Когда ответ видим, применяем максимальную высоту */
+.faq-answer.show {
+    display: block; /* Делаем блок видимым */
+    max-height: 500px; /* Или другое значение для максимальной высоты */
+}
+/* Адаптация для мобильных устройств */
+@media screen and (max-width: 768px) {
+    /* Контейнер FAQ */
+    .faq-container {
+        width: 90%; /* Делаем контейнер шире для мобильных устройств */
+        margin-top: 50px;
+    }
+
+    /* Заголовок FAQ */
+    .title {
+        font-size: 2rem; /* Уменьшаем размер шрифта заголовка */
+    }
+
+    /* Название секций */
+    .section-title {
+        font-size: 1.6rem; /* Уменьшаем размер шрифта для заголовков секций */
+    }
+
+    /* Вопросы */
+    .faq-question {
+        font-size: 1rem; /* Уменьшаем размер шрифта для вопросов */
+        padding: 12px; /* Уменьшаем отступы внутри вопросов */
+    }
+
+    /* Ответы на вопросы */
+    .faq-answer {
+        padding: 12px; /* Уменьшаем отступы для ответов */
+        font-size: 0.9rem; /* Уменьшаем размер шрифта для ответов */
+    }
+}

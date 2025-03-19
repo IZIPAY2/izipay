@@ -1,0 +1,71 @@
+/* Общие стили */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;  /* Черный фон */
+    color: #FFFFFF;  /* Белый текст */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Занять всю высоту экрана */
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+/* Главный контейнер - центрирование по всей странице */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    padding: 20px; /* Добавляем немного внутреннего отступа для визуального комфорта */
+    width: 80%; /* Задаем ширину в процентах для уменьшения растягивания */
+    max-width: 1200px; /* Ограничиваем максимальную ширину */
+    margin: 0 auto; /* Центрируем элемент по горизонтали */
+    text-align: center;
+    box-sizing: border-box;
+    margin-top: 50px;
+    height: auto;
+    margin-bottom: 190px;
+}
+
+/* Заголовок - центрируется */
+.title {
+    font-size: 45px;
+    color: #07B218;
+    text-align: center;
+}
+
+/* Контейнер для текста */
+.text-container {
+    text-align: center;
+    max-width: auto; /* Даем больше пространства тексту */
+    font-size: 21px;
+    color: #FFFFFF;
+}
+
+/* Адаптация для мобильных устройств */
+@media screen and (max-width: 768px) {
+    /* Главный контейнер */
+    .container {
+        margin: 10px;  /* Уменьшаем отступы */
+        padding: 15px;
+        width: auto;  /* Ширина на весь экран */
+        margin-top: 50px;
+    }
+
+    /* Заголовок */
+    .title {
+        font-size: 30px;  /* Уменьшаем размер шрифта */
+        margin-bottom: 15px;  /* Уменьшаем отступ снизу */
+    }
+
+    /* Контейнер для текста */
+    .text-container {
+        max-width: auto;  /* Максимальная ширина - 90% */
+        font-size: 18px;  /* Уменьшаем размер шрифта */
+        text-align: justify;  /* Выравниваем текст по ширине для лучшей читаемости */
+    }
+}
+

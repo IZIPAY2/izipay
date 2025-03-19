@@ -1,0 +1,211 @@
+footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center; /* Верхняя часть футера по центру */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Общий контейнер футера */
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* Оставляем соцсети, компанию и email в один ряд */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+}
+
+/* Блок с соцсетями */
+.footer-links {
+    display: flex;
+    gap: 15px;
+}
+
+/* Стили для иконок соцсетей */
+.footer-links img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.2s;
+}
+
+.footer-links img:hover {
+    transform: scale(1.1);
+}
+
+/* Блок с названием компании */
+.footer-legal {
+    font-size: 14px;
+    color: #FFFFFF;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.footer-legal p {
+    margin: 0;
+}
+
+/* Блок с email */
+.footer-email {
+    font-size: 16px;
+}
+
+.footer-email a {
+    color: #07B218;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-email a:hover {
+    text-decoration: underline;
+}
+
+/* Горизонтальная линия */
+.footer-line {
+    border: none;
+    height: 1px;
+    background-color: #444;
+    width: 100%;
+    margin: 20px auto;
+}
+
+/* Секция меню (выравнено влево) */
+.footer-menu {
+    display: flex;
+    justify-content: flex-start; /* Меню теперь влево */
+    gap: 50px;
+    padding: 20px 0;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left; /* Текст внутри тоже влево */
+}
+
+/* Колонки меню */
+.menu-column {
+    text-align: left; /* Заголовки и ссылки в колонках выровнены влево */
+}
+
+.menu-column h4 {
+    font-size: 23px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.menu-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-column li {
+    margin: 5px 0;
+}
+
+/* Стили для ссылок */
+.menu-column a {
+    color: #aaaaaa;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.menu-column a:hover {
+    color: #07B218;
+    text-decoration: underline;
+}
+
+/* 🔥 Адаптивность для мобильных устройств 🔥 */
+@media (max-width: 1024px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-links {
+        margin-bottom: 10px;
+    }
+
+    .footer-email {
+        margin-top: 10px;
+    }
+
+    .footer-legal {
+        margin-top: 10px;
+    }
+
+    .footer-menu {
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: left;
+        gap: 20px;
+        padding: 10px 20px;
+    }
+
+    .menu-column {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-links {
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .footer-links img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .footer-email {
+        font-size: 14px;
+    }
+
+    .footer-menu {
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .menu-column h4 {
+        font-size: 20px;
+    }
+
+    .menu-column li {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-container {
+        padding: 10px;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .footer-links img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .footer-email {
+        font-size: 12px;
+    }
+
+    .footer-menu {
+        padding: 10px;
+    }
+
+    .menu-column h4 {
+        font-size: 18px;
+    }
+
+    .menu-column li {
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,187 @@
+/* Общие стили */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000; /* Черный фон */
+    color: #ffffff; /* Белый текст */
+}
+
+/* Навигация */
+.navbar {
+    background-color: #000000; /* Темный фон для навигации */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-logo img {
+    width: 171px;
+    transform: translateX(10px); /* Сдвиг влево */
+}
+
+.navbar-menu {
+    list-style-type: none;
+    display: flex;
+}
+
+.navbar-menu li {
+    margin-left: 20px;
+}
+
+.navbar-menu a {
+    color: #07B218;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar-menu a:hover {
+    text-decoration: underline;
+}
+
+/* Контейнер страницы */
+.profile-container {
+    padding: 40px;
+    background-color: #000000; /* Черный фон для контента */
+}
+
+/* Заголовки */
+.profile-header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.profile-header p {
+    font-size: 18px;
+    color: #b0b0b0;
+    margin-bottom: 40px;
+}
+
+/* Детали профиля */
+.profile-details {
+    background-color: #000000;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+}
+
+.profile-details h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.profile-field {
+    margin-bottom: 20px;
+}
+
+.profile-field label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+.profile-field input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #666666;
+    border-radius: 5px;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+/* Кнопки */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #07B218;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Секция изменения пароля */
+.profile-password {
+    background-color: #000000;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.profile-password h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+/* Адаптация для мобильных устройств */
+@media screen and (max-width: 768px) {
+    /* Логотип */
+    .navbar-logo img {
+        width: 150px; /* Уменьшаем размер логотипа */
+        transform: translateX(0); /* Убираем сдвиг */
+    }
+
+    /* Навигация */
+    .navbar {
+        padding: 15px;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .navbar-menu {
+        display: block;
+        margin-top: 20px;
+
+    }
+
+    .navbar-menu li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    /* Контейнер страницы */
+    .profile-container {
+        padding: 20px;
+    }
+
+    /* Заголовки */
+    .profile-header h1 {
+        font-size: 28px; /* Уменьшаем размер заголовка */
+    }
+
+    .profile-header p {
+        font-size: 16px; /* Уменьшаем размер текста */
+    }
+
+    /* Детали профиля */
+    .profile-details {
+        padding: 15px; /* Уменьшаем отступы внутри блока */
+    }
+
+    .profile-details h2 {
+        font-size: 20px; /* Уменьшаем размер подзаголовка */
+    }
+
+    /* Поля ввода */
+    .profile-field input {
+        font-size: 14px; /* Уменьшаем шрифт в инпутах */
+        padding: 10px;
+    }
+
+    /* Кнопки */
+    button {
+        font-size: 14px; /* Уменьшаем шрифт кнопок */
+        padding: 10px;
+    }
+
+    /* Секция изменения пароля */
+    .profile-password {
+        padding: 15px;
+    }
+
+    .profile-password h2 {
+        font-size: 20px; /* Уменьшаем размер заголовка */
+    }
+}

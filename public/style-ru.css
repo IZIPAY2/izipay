@@ -1,0 +1,819 @@
+/* Общие стили */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;  /* Черный фон */
+    color: #FFFFFF;  /* Белый текст */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Занять всю высоту экрана */
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 10%;
+    height: 85vh;
+}
+
+/* Левая часть с текстом */
+.hero-text {
+    max-width: 50%;
+}
+
+.hero-text h1 {
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-text p {
+    font-size: 18px;
+    color: #b0b0b0;
+    margin-bottom: 30px;
+}
+
+button {
+    background-color: #07B218;
+    color: #ffffff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #FFFFFF;
+    color: #07B218;
+}
+
+
+/* Правая часть с картами */
+.hero-cards {
+    position: relative;
+    width: 50%;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible; /* Убираем обрезку */
+}
+
+/* Контейнер карт */
+.hero-image {
+    position: absolute;
+    width: 320px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: transparent; /* Убираем возможный фон */
+}
+.hero-image img {
+    display: block;
+    border: none; /* Убираем границы */
+    box-shadow: none; /* Отключаем возможные тени */
+    background: transparent; /* Убираем черный фон */
+}
+
+/* Верхняя карта */
+.hero-image:nth-child(1) {
+    top: -20px;
+    left: 20px;
+    transform: rotate(-8deg);
+    z-index: 2;
+    border-radius: 20px;
+}
+
+/* Нижняя карта */
+.hero-image:nth-child(2) {
+    top: 50px;
+    right: 20px;
+    transform: rotate(8deg);
+    z-index: 1;
+    border-radius: 20px;
+}
+
+/* Эффект при наведении */
+.hero-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 255, 255, 0.3);
+    background: none !important;
+    outline: none !important;
+}
+/* Фикс черной полосы */
+.hero-cards {
+    overflow: visible; /* Отключаем скрытие теней */
+}
+
+/* Адаптация для мобильных устройств */
+@media screen and (max-width: 768px) {
+    .hero-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        height: auto;
+        padding: 40px 5%;
+    }
+
+    /* Делаем карты первыми */
+    .hero-cards {
+        order: -1; /* Перемещаем вверх */
+        width: 90%;
+        height: 280px;
+        margin-bottom: 30px;
+    }
+
+    .hero-text {
+        max-width: 90%;
+    }
+
+    .hero-text h1 {
+        font-size: 32px;
+    }
+
+    .hero-text p {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    button {
+        font-size: 18px;
+        padding: 12px 25px;
+    }
+
+    /* Настроим карты для мобильного вида */
+    .hero-image {
+        width: 250px;
+        margin-top: 100px;
+    }
+
+    .hero-image:nth-child(1) {
+        top: -10px;
+        left: 10px;
+        transform: rotate(-6deg);
+    }
+
+    .hero-image:nth-child(2) {
+        top: 30px;
+        right: 10px;
+        transform: rotate(6deg);
+    }
+}
+
+/* Секция с изображением и текстом */
+.products {
+    display: flex;
+    justify-content: center;  /* Центрирование по горизонтали */
+    align-items: center;      /* Центрирование по вертикали */
+    padding: 60px 20px;
+    height: 90vh;  /* Задаем высоту секции на весь экран */
+    background: #000000;
+}
+
+.product-text {
+    max-width: 40%;  /* Ограничиваем ширину блока с текстом */
+    padding-left: 20px;
+    color: #d5d5d5;  /* Цвет текста */
+    text-align: left;  /* Текст выравнивается по левому краю */
+}
+
+.product-title {
+    font-size: 45px;
+    color: #ffffff;  /* Зеленый для заголовка */
+    margin-bottom: 20px;
+}
+
+.product-description {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.product-button {
+    background-color: #07B218;  /* Зеленая кнопка */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.product-button:hover {
+    background-color: #ffffff;  /* Темный цвет при наведении */
+}
+
+.product-image {
+    max-width: 45%;  /* Ограничиваем ширину изображения */
+}
+
+.product-image img {
+    width: 100%;  /* Заполняем контейнер по ширине */
+    height: auto;
+    display: block;
+}
+
+/* Секция с криптокартами */
+.crypto-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 100px 20px;
+    background-color: #000000;
+    color: #FFFFFF;
+    justify-content: center;
+    height: 80vh;
+}
+
+.crypto-card-text h2 {
+    font-size: 45px;
+    color: #ffffff;
+    margin-bottom: 60px;
+}
+
+.choose-card-button {
+    background-color: #07B218;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-top: 50px;
+    margin-bottom: 80px;
+}
+
+.choose-card-button:hover {
+    background-color: #ffffff;
+}
+
+/* Анимация прокрутки карт */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.card-slider {
+    display: flex;
+    width: 100%;
+    height: 300px;  /* Высота слайдера */
+    overflow: hidden;  /* Скрывает все, что выходит за пределы */
+    position: relative;
+}
+
+.card-container {
+    display: flex;
+    width: 200%; /* Удваиваем ширину контейнера, чтобы обеспечить бесшовную прокрутку */
+    animation: scroll-cards 10s linear infinite; /* Непрерывная анимация */
+    margin-top: 20px;
+}
+
+.card {
+    flex-shrink: 0;
+    width: 290px; /* Уменьшаем ширину карт */
+    height: 100%;
+    margin-right: 10px; /* Меньше расстояние между картами */
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Определение анимации для прокрутки */
+@keyframes scroll-cards {
+    0% {
+        transform: translateX(0); /* Начинаем с первой позиции */
+    }
+    100% {
+        transform: translateX(-50%); /* Прокручиваем контейнер на 50% ширины для бесшовной прокрутки */
+    }
+}
+
+/* Общие стили для секции */
+.payment-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0;
+    height: auto;
+    min-height: 100vh;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Контейнер для Apple Pay и Google Pay */
+.payment-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 900px;
+    background-color: #020F0A;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+/* Стили для текстовой части */
+.payment-text {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    flex-grow: 1;
+    justify-content: center; /* Центрируем по вертикали */
+}
+
+/* Заголовок */
+.payment-text h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #07B218;
+}
+
+/* Описание */
+.payment-text p {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+/* Кнопка */
+.payment-text .btn {
+    display: inline-block;
+    padding: 10px 20px; /* Уменьшаем отступы внутри кнопки */
+    background-color: #07B218;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px; /* Уменьшаем шрифт */
+    width: auto; /* Убираем растяжение кнопки на всю ширину */
+    max-width: 250px; /* Максимальная ширина кнопки */
+    margin: 10px auto; /* Центрируем кнопку */
+}
+
+.payment-text .btn:hover {
+    background-color: #ffffff;
+    color: #07B218;
+}
+
+/* Стили для изображения */
+.payment-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.payment-image img {
+    max-width: 100%;  
+    height: auto;
+    max-height: 300px;  
+}
+
+/* Стили для Apple Pay - выравнивание фото и текста справа */
+.apple-pay {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start; /* Убедимся, что контент по левому краю */
+    text-align: center; /* Выровнять текст по левому краю */
+}
+
+/* Стили для Google Pay - выравнивание фото и текста слева */
+.google-pay {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-start; /* Убедимся, что контент по правому краю */
+    text-align: center; /* Выровнять текст по правому краю */
+}
+
+/* Для сдвига изображений */
+.apple-pay .payment-image {
+    padding-left: 50px; 
+}
+
+.google-pay .payment-image {
+    padding-right: 50px;
+}
+
+/* Дополнительная корректировка для выравнивания всего по вертикали */
+.payment-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+    align-items: center;      
+    height: auto;
+    width: 100%;
+}
+
+.features-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;  /* Высота секции 80% экрана */
+}
+
+/* Контейнер для боксов */
+.features-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;  /* Расстояние между боками */
+}
+
+/* Бокс с характеристиками */
+.feature-box {
+    background-color: #020F0A;
+    padding: 10px;
+    border-radius: 10px;
+    width: 500px;  /* Ширина бокса */
+    height: 350px;
+    color: white;
+}
+
+/* Заголовок в каждом боксе */
+.feature-box h2 {
+    font-size: 43px;
+    margin-bottom: 10px;
+    color: #07B218;
+    text-align: left;
+    margin-left: 26px;
+}
+
+/* Список в каждом боксе */
+.feature-box ul {
+    list-style: none;
+    font-size: 20px;
+    text-align: left;
+    margin-left: auto; /* Сдвигаем влево */
+    padding: 30px;
+}
+
+/* Выравнивание для первого бокса (Key Features) */
+.key-features {
+    position: relative;
+    top: -100px;  /* Немного поднимаем этот бокс */
+}
+
+
+/* Выравнивание для второго бокса (IZI Pay Advantages) */
+.izi-pay-advantages {
+    position: relative;
+    top: 100px;  /* Немного опускаем второй бокс */
+}
+
+.crypto-bank-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;  /* Высота секции на весь экран */
+    text-align: center;
+    padding: 20px;
+}
+
+/* Заголовок */
+.crypto-bank-header h1 {
+    font-size: 40px;
+    color: #07B218;
+    margin-bottom: 40px;
+}
+
+/* Контейнер с действиями */
+.actions {
+    display: flex;
+    justify-content: center; /* Центрируем весь контейнер */
+    align-items: center; /* Выравниваем по вертикали */
+    gap: 10px; /* Уменьшаем расстояние между блоками */
+    width: 100%;
+    flex-wrap: wrap; /* Чтобы блоки не ломались на узких экранах */
+}
+
+/* Блоки с изображениями */
+.action-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрируем контент */
+    justify-content: center;
+    width: 350px; /* Фиксированная ширина для лучшего расположения */
+    background-color: #000000;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Контейнер для изображений */
+.action-images {
+    display: flex;
+    justify-content: center; /* Центрируем изображения */
+    align-items: center;
+    width: 100%;
+}
+
+/* Стили для изображений (увеличиваем размер в два раза) */
+.action-images img {
+    width: 100%; /* Изображения теперь будут заполнять контейнер */
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Стили для стрелок (уменьшаем расстояние между ними) */
+.arrow-text {
+    font-size: 50px;
+    color: white;
+    margin: 0;  /* Убираем маргин вокруг стрелки */
+    font-weight: bold;
+}
+
+
+/* Стили для секции с текстом */
+.no-kyc-section {
+    display: flex;
+    flex-direction: column; /* Размещение элементов в колонку */
+    justify-content: center; /* Центрирование по вертикали */
+    align-items: center;     /* Центрирование по горизонтали */
+    height: 70vh;           /* Высота секции на весь экран */
+    background-color: #000000;
+}
+
+/* Стили для текста */
+.no-kyc-text {
+    text-align: left;
+    display: flex;
+    flex-direction: column; /* Внутри блока будем выравнивать каждый элемент по очереди */
+    align-items: flex-start; /* Элементы будут выровнены по левому краю */
+}
+
+.no-kyc-text h1 {
+    font-size: 80px; /* Размер шрифта 80px */
+    margin: 5px 0;
+    color: #ffffff;
+    align-items: flex-start;
+}
+
+/* Стили для кнопки */
+.start-button {
+    margin-top: 30px;  /* Отступ сверху от текста */
+    padding: 15px 190px;
+    background-color: #FFFFFF;  /* Белая кнопка */
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.start-button:hover {
+    background-color: #07B218;  /* Темный фон при наведении */
+    color: #ffffff;
+}
+/* Адаптация для мобильных устройств */
+@media screen and (max-width: 768px) {
+    html, body {
+        overflow-x: hidden;
+
+    }
+    .hero {
+        display: flex;
+        flex-direction: column; /* Размещаем элементы друг под другом */
+        align-items: center; /* Центрируем все элементы по горизонтали */
+        height: auto;
+        padding: 30px 30px;
+        margin-top: 100px;
+    }
+
+    .hero h2 {
+        font-size: 30px;
+        max-width: 100%;
+        text-align: center; /* Центрируем заголовок */
+        margin-bottom: 20px; /* Отступ между заголовком и текстом */
+    }
+
+    .hero-content {
+        max-width: 100%; /* Делаем контент шире */
+        padding-left: 0px;
+        text-align: left; /* Выравниваем текст по левому краю */
+        order: 1; /* Устанавливаем порядок отображения */
+        margin-bottom: 20px; /* Отступ между контентом и изображением */
+    }
+
+    .hero p {
+        font-size: 18px;
+        max-width: 100%; /* Делаем текст шире */
+        text-align: left; /* Выравниваем текст по левому краю */
+        margin-bottom: 20px; /* Отступ снизу */
+    }
+
+    button {
+        width: 100%; /* Кнопка занимает всю ширину */
+        padding: 12px;
+        font-size: 18px;
+        margin-top: 20px; /* Отступ между текстом и кнопкой */
+    }
+
+    .hero-image {
+        width: 100%; /* Изображение занимает всю доступную ширину */
+        display: flex;
+        justify-content: center; /* Центрируем изображение */
+        order: -1; /* Устанавливаем порядок отображения */
+    }
+
+    .hero-image img {
+        width: 60%; /* Размер изображения */
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* Прокрутка карт - уменьшение кнопки */
+    .card-slider button {
+        width: 30px; /* Сделаем кнопку ещё меньше */
+        padding: 4px 8px; /* Минимальные отступы */
+        font-size: 12px; /* Очень маленький шрифт */
+        height: auto; /* Оставляем автоматическую высоту */
+    }
+    .card-container {
+        animation: scroll-cards 5s linear infinite; /* Уменьшаем продолжительность анимации */
+    }
+    
+    .products {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+    }
+
+    .product-text {
+        max-width: 90%;
+        padding-left: 0;
+    }
+
+    .product-title {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .product-description {
+        font-size: 16px;
+    }
+
+    .product-button {
+        width: 100%;
+        font-size: 18px;
+    }
+
+    .product-image {
+        max-width: 100%;
+        margin: 20px auto;
+        order: -1;
+    }
+
+    .crypto-card {
+        padding: 50px 10px;
+        height: auto;
+    }
+
+    .crypto-card-text h2 {
+        font-size: 35px;
+    }
+
+    .choose-card-button {
+        width: 50;
+        font-size: 14px;
+        padding: 5px 18px; /* Еще меньше кнопка */
+    }
+
+    .card {
+        width: 200px;
+    }
+
+    .payment-section {
+        height: auto;
+        padding: 30px 10px;
+        gap: 30px;
+        max-width: 100%;
+        box-sizing: border-box; /* Учитываем padding и border в общей ширине */
+        overflow-x: hidden; /* Скрываем выходящий за пределы контент */
+        display: flex;
+    flex-wrap: wrap; /* Разрешаем перенос элементов */
+    justify-content: center; /* Центрируем элементы */
+    }
+
+    .payment-box {
+        flex-direction: column;
+        width: 90%;
+        text-align: center;
+        max-width: 100%;
+        box-sizing: border-box; /* Учитываем padding и border в общей ширине */
+        overflow-x: hidden; /* Скрываем выходящий за пределы контент */
+        margin: 0 auto; /* Центрирование и предотвращение выхода за пределы */
+        padding: 0 10px; /* Добавляем небольшие отступы */
+    }
+
+    .apple-pay, .google-pay {
+        flex-direction: column;
+        margin: 0;
+        text-align: center; /* Текст Google Pay по центру */
+        max-width: 100%;
+        box-sizing: border-box; /* Учитываем padding и border в общей ширине */
+        overflow-x: hidden; /* Скрываем выходящий за пределы контент */
+    }
+
+    .apple-pay .payment-image, .google-pay .payment-image {
+        padding: 0;
+    }
+    .payment-image {
+        max-width: 100%; /* Изображения не будут выходить за границы */
+        height: auto;
+    }    
+
+    .features-section {
+        display: flex; /* Используем flexbox */
+        flex-direction: column;
+        justify-content: center; /* Выравниваем элементы по вертикали */
+        align-items: center; /* Выравниваем элементы по горизонтали */
+        height: 100vh; /* Задаем высоту секции равной высоте экрана */
+        padding: 30px 10px;
+    }
+    
+    .features-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Центрируем контейнер по горизонтали */
+    }
+    
+    .feature-box {
+        width: 90%;
+        max-width: 380px; /* Ограничиваем ширину, чтобы контент не растягивался на весь экран */
+        height: auto;
+        text-align: center; /* Центрируем текст внутри блока */
+        margin-left: 5%; /* Добавляем отступ слева, чтобы сдвигать блок */
+    }
+    
+    /* Опускаем "Key Features" ближе к нижнему блоку */
+    .key-features {
+        position: relative;
+        top: 0; /* Убираем отступ сверху */
+        margin-top: 20px; /* Добавляем небольшой отступ сверху, если нужно */
+        text-align: center; /* Центрируем текст в блоке */
+    }
+    
+
+    /* Уменьшаем размер заголовка */
+    .crypto-bank-header h1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+        margin-top: 700px;
+    }
+
+    /* Контейнер с действиями */
+    .actions {
+        gap: 10px; /* Увеличиваем расстояние между блоками */
+        flex-direction: column; /* Ставим блоки в столбик */
+    }
+
+    /* Блоки с изображениями */
+    .action-item {
+        width: auto; /* Увеличиваем ширину блоков на мобильных */
+        max-width: 300px; /* Ограничиваем ширину блоков */
+    }
+
+    /* Изображения */
+    .action-images img {
+        max-width: 300px; /* Уменьшаем размеры изображений */
+    }
+
+    /* Стрелки */
+    .arrow-text {
+        font-size: 30px; /* Уменьшаем размер стрелок */
+        margin: 0 5px; /* Уменьшаем расстояние между стрелками */
+        transform: rotate(90deg); /* Поворот стрелки на 90 градусов (вниз) */
+    }
+
+    .no-kyc-section {
+        height: 50vh;
+        padding: 30px 10px;
+        margin-top: 600px;
+    }
+
+    .no-kyc-text {
+        text-align: center;
+        align-items: left;
+    }
+
+    .no-kyc-text h1 {
+        font-size: 40px;
+    }
+
+    .start-button {
+        width: 60%;
+        padding: 15px;
+        font-size: 18px;
+    }
+}
